@@ -1,16 +1,16 @@
-#MENTORMATE DevCamp
+# MENTORMATE DevCamp
 ---
 
-##Rookie to Rockstar Full-Stack Intern
+## Rookie to Rockstar Full-Stack Intern
 ---
 
-###First Assignment
+### First Assignment
 
 
 <details>
 <summary>Green vs. Red project</summary>
 
-'Green vs Red is a game played on a 2D grid that in theory can be infinite (in our case we will assume 
+Green vs Red is a game played on a 2D grid that in theory can be infinite (in our case we will assume 
 that x <= y < 1 000)
 
 Each cell on this grid can be either green (represented by 1) or red (represented by 0) The game always 
@@ -18,7 +18,8 @@ receives an initial state of the grid which we will call •Generation Zero'. Af
 applied across the grid and those rules form the next generation
 
 
-'es that Zeaecthert:de rcleelldthgaet7:errolunded by exactly 3 or exactly 6 green cells will also become green in 
+Rules that create the next generation:
+    1. Each red cell is surrounded by exactly 3 or exactly 6 green cells will also become green in 
 the nod generation
     2. A red cell will stay red in the next generation if it has either O. 1, 2. 4. 5. 7 or 8 green 
 neighbours.
@@ -27,9 +28,10 @@ generation
     4. A green cell MI stay green in the next generation if it has either 2. 3 or 6 green neighbours 
 
 
-Imeertntaeceti tecll can be surrounded by up to 8 cells 4 on the sides and 4 on the comers Exceptions 
+**Important facts:** 
+    - Each cell can be surrounded by up to 8 cells 4 on the sides and 4 on the comers Exceptions 
 
-are the 7rAlletriteee4eutlhees e;pdceey earlthhe srakrne time for the whole grid in order for the next generation to be 
+    - All the 4 rules apply at the same time for the whole grid in order for the next generation to be 
 formed
 
 Your Task:
