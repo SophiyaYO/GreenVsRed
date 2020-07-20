@@ -44,7 +44,11 @@ public class GreenVsRed {
         this.board[x][y] = 0;
     }
 
-    private int countGreenNeighbours(int x, int y) {//checking surrounding cells for green (1) and returning the sum
+    /**
+     * checking surrounding cells for green (1) and returning the sum
+     * getState will make sure it does not go out of the board
+     */
+    private int countGreenNeighbours(int x, int y) {
         int count = 0;
 
         count += getState(x - 1, y - 1);
@@ -61,7 +65,7 @@ public class GreenVsRed {
         return count;
     }
 
-    //with this method we are checking every surrounding cell value (if it is on the board)
+    //checking every surrounding cell value (if it is on the board)
     private int getState(int x, int y) {
         if (x < 0 || x >= width) {//out of horizontal board scope- adding Zero
             return 0;
