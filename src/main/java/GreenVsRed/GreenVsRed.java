@@ -1,58 +1,50 @@
 package main.java.GreenVsRed;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class GreenVsRed {
 
-    int width;
-    int height;
-    int wantedX;
-    int wantedY;
-    int beenGreen;
-    int[][] board;
+    private int width;
+    private int height;
+    protected int wantedX;
+    protected int wantedY;
+    private int beenGreen;
+    private int[][] board;
 
-    public GreenVsRed(int width, int height) {
+    protected GreenVsRed(int width, int height) {
         this.width = width;
         this.height = height;
         this.beenGreen = 0;
         this.board = new int[width][height];
     }
 
-    public void setWantedX(int x) {
-        this.wantedX = x;
-    }
-
-    public void setWantedY(int y) {
-        this.wantedY = y;
-    }
-
-    private int getWantedX(){
+    private int getWantedX() {
         return this.wantedX;
     }
 
-    private int getWantedY(){
+    private int getWantedY() {
         return this.wantedY;
     }
 
-    public void printBoard() {
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                System.out.print(board[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
+    /**
+     * the board can be printed with  this method by removing the comments
+     * protected void printBoard() {
+     * for (int i = 0; i < height; i++) {
+     * for (int j = 0; j < width; j++) {
+     * System.out.print(board[i][j] + " ");
+     * }
+     * System.out.println();
+     * }
+     * }
+     **/
 
-    public void setGreen(int x, int y) {
+    protected void setGreen(int x, int y) {//using it you can initialize cell to green (green='1')
         this.board[x][y] = 1;
     }
 
-    public void setRed(int x, int y) {
+    protected void setRed(int x, int y) {//using it you can initialize cell to red (green='0')
         this.board[x][y] = 0;
     }
 
-    public int countGreenNeighbours(int x, int y) {
+    private int countGreenNeighbours(int x, int y) {//checking surrounding cells for green (1) and returning the sum
         int count = 0;
 
         count += getState(x - 1, y - 1);
@@ -69,38 +61,38 @@ public class GreenVsRed {
         return count;
     }
 
-    public int getState(int x, int y) {
-        if (x < 0 || x >= width) {
+    //with this method we are checking every surrounding cell value (if it is on the board)
+    private int getState(int x, int y) {
+        if (x < 0 || x >= width) {//out of horizontal board scope- adding Zero
             return 0;
         }
 
-        if (y < 0 || y >= height) {
+        if (y < 0 || y >= height) {//out of vertical board scope- adding Zero
             return 0;
         }
 
-        return this.board[x][y];
+        return this.board[x][y];//getting the value of the cell
     }
 
 
-    public void timesBeenGreen() {
+    private void timesBeenGreen() {
         this.beenGreen++;
     }
 
-    public int getBeenGreen(){
+    protected int getBeenGreen() {
         return this.beenGreen;
     }
 
-    private void turnExact(int turns) {
+    protected void turnExact(int turns) {
         for (int i = 0; i < turns; i++) {
             turn();
-            printBoard();
         }
     }
 
-    public void turn() {
+    private void turn() {
         int[][] newBoard = new int[width][height];
 
-        if (this.board[getWantedX()][getWantedY()]==1) {
+        if (this.board[getWantedX()][getWantedY()] == 1) {
             timesBeenGreen();
         }
 
@@ -115,7 +107,7 @@ public class GreenVsRed {
                         newBoard[i][j] = 0;
                     } else if (greenNeighbours > 6 && greenNeighbours <= 8) {
                         newBoard[i][j] = 0;
-                    } else  {
+                    } else {
                         newBoard[i][j] = 1;
                     }
 
@@ -129,46 +121,5 @@ public class GreenVsRed {
             }
         }
         this.board = newBoard;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-
-        int[] dimension = Arrays.stream(scanner.nextLine().split(","))
-                .mapToInt(Integer::parseInt)
-                .toArray();
-
-        int xWidth = dimension[0];
-        int yHeight = dimension[1];
-
-        GreenVsRed simulate = new GreenVsRed(xWidth, yHeight);
-
-        for (int i = 0; i < xWidth; i++) {
-            int[] stringLine = Arrays.stream(scanner.nextLine().split(""))
-                    .mapToInt(Integer::parseInt)
-                    .toArray();
-
-            for (int j = 0; j < yHeight; j++) {
-                if (stringLine[i] == 1) {
-                    simulate.setGreen(i, j);
-                } else {
-                    simulate.setRed(i, j);
-                }
-            }
-        }
-
-        int[] coordNumbStr = Arrays.stream(scanner.nextLine().split(","))
-                .mapToInt(Integer::parseInt)
-                .toArray();
-
-        simulate.wantedX = coordNumbStr[0];
-        simulate.wantedY = coordNumbStr[1];
-        int turns = coordNumbStr[2];
-
-        simulate.turnExact(turns);
-        simulate.printBoard();
-        System.out.println(simulate.getBeenGreen());
-
     }
 }
