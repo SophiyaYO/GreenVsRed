@@ -9,11 +9,13 @@ public class GreenVsRed {
     int height;
     int wantedX;
     int wantedY;
+    int beenGreen;
     int[][] board;
 
     public GreenVsRed(int width, int height) {
         this.width = width;
         this.height = height;
+        this.beenGreen = 0;
         this.board = new int[width][height];
     }
 
@@ -23,6 +25,14 @@ public class GreenVsRed {
 
     public void setWantedY(int y) {
         this.wantedY = y;
+    }
+
+    private int getWantedX(){
+        return this.wantedX;
+    }
+
+    private int getWantedY(){
+        return this.wantedY;
     }
 
     public void printBoard() {
@@ -72,32 +82,51 @@ public class GreenVsRed {
     }
 
 
-    public int timesBeenGreen(int x, int y) {
-        int count = 0;
-        count ++;
+    public void timesBeenGreen() {
+        this.beenGreen++;
+    }
 
-        return count;
+    public int getBeenGreen(){
+        return this.beenGreen;
+    }
+
+    private void turnExact(int turns) {
+        for (int i = 0; i < turns; i++) {
+            turn();
+            printBoard();
+        }
     }
 
     public void turn() {
         int[][] newBoard = new int[width][height];
 
+        if (this.board[getWantedX()][getWantedY()]==1) {
+            timesBeenGreen();
+        }
+
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 int greenNeighbours = countGreenNeighbours(i, j);
 
-
                 if (getState(i, j) == 1) {
-                    if (greenNeighbours != 2 && greenNeighbours != 3 && greenNeighbours != 6) {
+                    if (greenNeighbours < 2) {
                         newBoard[i][j] = 0;
+                    } else if (greenNeighbours > 3 && greenNeighbours < 6) {
+                        newBoard[i][j] = 0;
+                    } else if (greenNeighbours > 6 && greenNeighbours <= 8) {
+                        newBoard[i][j] = 0;
+                    } else  {
+                        newBoard[i][j] = 1;
                     }
+
                 } else {
                     if (greenNeighbours == 3 || greenNeighbours == 6) {
                         newBoard[i][j] = 1;
+                    } else {
+                        newBoard[i][j] = 0;
                     }
                 }
             }
-
         }
         this.board = newBoard;
     }
@@ -129,18 +158,17 @@ public class GreenVsRed {
             }
         }
 
-
         int[] coordNumbStr = Arrays.stream(scanner.nextLine().split(","))
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        int xCoordCheck = coordNumbStr[0];
-        int yCoordCheck = coordNumbStr[1];
+        simulate.wantedX = coordNumbStr[0];
+        simulate.wantedY = coordNumbStr[1];
         int turns = coordNumbStr[2];
 
-        for (int i = 0; i < turns; i++) {
-
-        }
+        simulate.turnExact(turns);
+        simulate.printBoard();
+        System.out.println(simulate.getBeenGreen());
 
     }
 }
