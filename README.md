@@ -90,14 +90,14 @@ expected result: 14
 <br/>
 
 I. Classes:
-    - [GreenVsRed.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/GreenVsRed.java)
-    - [Main.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Main.java)
-    - [Exceptions](https://github.com/SophiyaYO/GreenVsRed/tree/master/src/main/java/GreenVsRed/Exceptions)
-        - [ArrayIndexOutOfBoundsException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/ArrayIndexOutOfBoundsException.java)
-        - [IOException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/IOException.java)
-        - [InputMismatchException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/InputMismatchException.java)
-        - [InvalidNumberException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/InvalidNumberException.java)
-        - [NumberFormatException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/NumberFormatException.java)
+    - [GreenVsRed.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/GreenVsRed.java)<br/>
+    - [Main.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Main.java)<br/>
+    - [Exceptions](https://github.com/SophiyaYO/GreenVsRed/tree/master/src/main/java/GreenVsRed/Exceptions)<br/>
+        - [ArrayIndexOutOfBoundsException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/ArrayIndexOutOfBoundsException.java)<br/>
+        - [IOException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/IOException.java)<br/>
+        - [InputMismatchException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/InputMismatchException.java)<br/>
+        - [InvalidNumberException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/InvalidNumberException.java)<br/>
+        - [NumberFormatException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/NumberFormatException.java)<br/>
        
  1. GreenVsRed 
     - class GreenVsRed
