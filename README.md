@@ -81,7 +81,7 @@ expected result: 14
     -  SDK 11.0.2;
 2. IDE - IntelliJ  Platform.
 3. VCS - Git.
-<details/>
+</details>
 
 
 <details>
@@ -118,5 +118,4 @@ I. Classes:
         - InputMismatchException - not in use for now/ deprecated
         - InvalidNumberException - throws custom message if input is not integer as required
         - NumberFormatException - throws custom message if input is not a number and/or does not contain "," or "" as separator
-        
-         <details/>   
+    </details>   
