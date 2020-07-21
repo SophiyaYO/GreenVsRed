@@ -89,8 +89,7 @@ expected result: 14
 
 <br/>
 
-I. Classes:
-
+I. Classes:<br/>
     - [GreenVsRed.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/GreenVsRed.java)<br/>
     - [Main.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Main.java)<br/>
     - [Exceptions](https://github.com/SophiyaYO/GreenVsRed/tree/master/src/main/java/GreenVsRed/Exceptions)<br/>
