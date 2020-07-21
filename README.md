@@ -71,18 +71,52 @@ expected result: 14
 
 </details>
 
-## Programming language and frameworks
+<details>
+<summary>Programming language and frameworks</summary>
+
+<br/>
 
 1. Programming language- Java EE.
     -  Java 8 Release;
     -  SDK 11.0.2;
 2. IDE - IntelliJ  Platform.
 3. VCS - Git.
+<details/>
 
 
-## Solution
+<details>
+<summary>Solution</summary>
 
-1. Classes:
+<br/>
+
+I. Classes:
     - [GreenVsRed.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/GreenVsRed.java)
     - [Main.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Main.java)
-    - 
+    - [Exceptions](https://github.com/SophiyaYO/GreenVsRed/tree/master/src/main/java/GreenVsRed/Exceptions)
+        - [ArrayIndexOutOfBoundsException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/ArrayIndexOutOfBoundsException.java)
+        - [IOException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/IOException.java)
+        - [InputMismatchException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/InputMismatchException.java)
+        - [InvalidNumberException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/InvalidNumberException.java)
+        - [NumberFormatException.java](https://github.com/SophiyaYO/GreenVsRed/blob/master/src/main/java/GreenVsRed/Exceptions/NumberFormatException.java)
+       
+ 1. GreenVsRed 
+    - class GreenVsRed
+        - encapsulation:
+            - private for all not allowed outside 
+            - protected 
+        - *for more information on how the code works, please check the comment in the code*
+     
+    - class Main- where code is invoke and run
+        - imports custom Exception classes - from GreenVsRed\src\main\java\GreenVsRed\Exceptions    
+        - use try - catch block to check for errors while executed
+        - isInScope(...) - check if given number is in exact scope
+        - mapInput(...) - read from user input from console, parse to integers and maps in array.<br/> In addition throws exception
+   
+    - dir Exceptions
+        - ArrayIndexOutOfBoundsException - throws custom message if index is out of array scope
+        - IOException - input/output custom exception
+        - InputMismatchException - not in use for now/ deprecated
+        - InvalidNumberException - throws custom message if input is not integer as required
+        - NumberFormatException - throws custom message if input is not a number and/or does not contain "," or "" as separator
+        
+         <details/>   
