@@ -2,7 +2,7 @@ package main.java.GreenVsRed.Exceptions;
 
 public class InvalidNumberException extends Exception {
     public InvalidNumberException(){
-        super();
+        super("Invalid number or/and separator.\nPress enter to exit.\"");
     }
 
     public InvalidNumberException(String message){
