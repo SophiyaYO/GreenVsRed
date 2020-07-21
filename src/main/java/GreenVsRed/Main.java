@@ -1,7 +1,6 @@
 package main.java.GreenVsRed;
 
 import main.java.GreenVsRed.Exceptions.ArrayIndexOutOfBoundsException;
-import main.java.GreenVsRed.Exceptions.InputMismatchException;
 import main.java.GreenVsRed.Exceptions.InvalidNumberException;
 
 import java.io.IOException;
@@ -9,7 +8,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         GreenVsRed simulate = null;
         int xWidth = 0;
@@ -21,12 +20,7 @@ public class Main {
             xWidth = dimension[0];
             yHeight = dimension[1];
 
-            if (xWidth < 1 || xWidth > 9) {
-                throw new InvalidNumberException("Each cell can be surrounded by up to 8 cells 4 on the sides and 4 on the comers.\nExceptions are the corners and the side of the grid.");
-            }
-            if (yHeight < 1 || yHeight > 9) {
-                throw new InvalidNumberException("Each cell can be surrounded by up to 8 cells 4 on the sides and 4 on the comers.\nExceptions are the corners and the side of the grid.");
-            }
+            isInScope(xWidth, yHeight, 1, 9, yHeight > 9);
 
             simulate = new GreenVsRed(xWidth, yHeight);
         } catch (NumberFormatException ex) {
@@ -57,21 +51,14 @@ public class Main {
         } catch (NumberFormatException ex) {
             System.out.println("Input must contain only numbers.");
             System.out.println("Exception is caused " + ex.getMessage());
-        } catch (ArrayIndexOutOfBoundsException | IOException e){
+        } catch (ArrayIndexOutOfBoundsException | IOException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-
             int[] coordNumbStr = mapInput(scanner, ",", 3);
 
-            if (coordNumbStr[0] < 0 || coordNumbStr[0] > xWidth) {
-                throw new InvalidNumberException("Each cell can be surrounded by up to 8 cells 4 on the sides and 4 on the comers.\nExceptions are the corners and the side of the grid.");
-            }
-
-            if (coordNumbStr[1] < 0 || coordNumbStr[1] > yHeight) {
-                throw new InvalidNumberException("Each cell can be surrounded by up to 8 cells 4 on the sides and 4 on the comers.\nExceptions are the corners and the side of the grid.");
-            }
+            isInScope(coordNumbStr[0], coordNumbStr[1], 0, xWidth, coordNumbStr[1] > yHeight);
 
             assert simulate != null;
             simulate.wantedX = coordNumbStr[0];
@@ -79,14 +66,22 @@ public class Main {
             int turns = coordNumbStr[2];
 
             simulate.turnExact(turns);
-            System.out.println(simulate.getBeenGreen());
+            simulate.printNumberTimesCellBeenGreen();
         } catch (NumberFormatException ex) {
             System.out.println("Input must contain only numbers separated by coma.");
             System.out.println("Exception is caused " + ex.getMessage());
         } catch (ArrayIndexOutOfBoundsException | InvalidNumberException e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    private static void isInScope(int param1, int param2, int underScopeVal, int overScopeVal, boolean customBoolean) throws InvalidNumberException {
+        if (param1 < underScopeVal || param1 > overScopeVal) {
+            throw new InvalidNumberException("Each cell can be surrounded by up to 8 cells 4 on the sides and 4 on the comers.\nExceptions are the corners and the side of the grid.");
+        }
+        if (param2 < underScopeVal || customBoolean) {
+            throw new InvalidNumberException("Each cell can be surrounded by up to 8 cells 4 on the sides and 4 on the comers.\nExceptions are the corners and the side of the grid.");
+        }
     }
 
     private static int[] mapInput(Scanner scanner, String separator, int arrayLength) throws ArrayIndexOutOfBoundsException {
