@@ -78,21 +78,23 @@ public class GreenVsRed {
         return this.board[x][y];//getting the value of the cell
     }
 
-
     private void timesBeenGreen() {
         this.beenGreen++;
     }
 
-    protected int getBeenGreen() {
+    private int getBeenGreen() {
         return this.beenGreen;
     }
 
+    //Loop for exact turns of the board
+    //turns are the last input data
     protected void turnExact(int turns) {
         for (int i = 0; i < turns; i++) {
             turn();
         }
     }
 
+    //method and action of turning
     private void turn() {
         int[][] newBoard = new int[width][height];
 
@@ -125,5 +127,10 @@ public class GreenVsRed {
             }
         }
         this.board = newBoard;
+    }
+
+    protected void printNumberTimesCellBeenGreen(){
+        System.out.println(this.getBeenGreen());
+//        System.out.println("Picked cell has been green for exact: " + this.getBeenGreen() + " turns.");
     }
 }
