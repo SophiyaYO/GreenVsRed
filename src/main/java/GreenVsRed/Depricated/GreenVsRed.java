@@ -4,8 +4,8 @@ public class GreenVsRed {
 
     private int width;
     private int height;
-    protected int wantedX;
-    protected int wantedY;
+    int wantedX;
+    int wantedY;
     private int beenGreen;
     private int[][] board;
 
