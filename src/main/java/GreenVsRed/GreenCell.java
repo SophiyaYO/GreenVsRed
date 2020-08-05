@@ -12,7 +12,4 @@ public class GreenCell extends Cell {
         return this.color;
     }
 
-    public void setColor() {
-        this.color = 1;
-    }
 }

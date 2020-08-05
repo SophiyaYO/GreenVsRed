@@ -19,11 +19,4 @@ abstract class Cell {
         return this.color;
     }
 
-    public void setColor(int color) {
-        if (color == 1) {
-            this.color = 1;
-        } else {
-            this.color = 0;
-        }
-    }
 }
