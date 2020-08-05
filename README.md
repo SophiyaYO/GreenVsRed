@@ -7,6 +7,22 @@
 ### First Assignment
 
 
+## Changed the program with full Object-oriented principles
+
+<details>
+<summary>What has changed? Read more here/</summary>
+<br/>
+
+- added 4 more classes
+- 1 is Abstract : class Cell
+- class RedCell and class GreenCell inherit class Cell, better polymorphism
+- class Board is initializing and implementing the game options and takes care to operate simultaneously with Red and Green classes
+- class Game has object Board and takes care of the new generations, also plays by using the Board methods
+
+With this refactoring of the code I am trying to achieve better encapsulation, abstraction, inheritance and polymorphism
+</details>
+
+
 <details>
 <summary>Green vs. Red project /assignment description and requirements/</summary>
 

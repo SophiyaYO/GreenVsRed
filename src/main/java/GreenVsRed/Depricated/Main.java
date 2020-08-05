@@ -1,5 +1,6 @@
-package main.java.GreenVsRed;
+package GreenVsRed.Depricated;
 
+import GreenVsRed.GreenVsRed;
 import main.java.GreenVsRed.Exceptions.ArrayIndexOutOfBoundsException;
 import main.java.GreenVsRed.Exceptions.InvalidNumberException;
 

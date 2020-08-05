@@ -1,4 +1,4 @@
-package main.java.GreenVsRed;
+package GreenVsRed.Depricated;
 
 public class GreenVsRed {
 
@@ -129,7 +129,7 @@ public class GreenVsRed {
         this.board = newBoard;
     }
 
-    protected void printNumberTimesCellBeenGreen(){
+    protected void printNumberTimesCellBeenGreen() {
         System.out.println(this.getBeenGreen());
 //        System.out.println("Picked cell has been green for exact: " + this.getBeenGreen() + " turns.");
     }
