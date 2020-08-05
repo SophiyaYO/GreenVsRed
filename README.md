@@ -4,10 +4,10 @@
 ## Rookie to Rockstar Full-Stack Intern
 ---
 
-### First Assignment
 
 
-## Changed the program with full Object-oriented principles
+
+### Changed the program with full Object-oriented principles
 
 <details>
 <summary>What has changed? Read more here/</summary>
@@ -21,6 +21,10 @@
 
 With this refactoring of the code I am trying to achieve better encapsulation, abstraction, inheritance and polymorphism
 </details>
+
+
+
+### First Assignment
 
 
 <details>
